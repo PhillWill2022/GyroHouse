@@ -21,7 +21,7 @@
 
 nav {
     width: 250px;
-    background-color: white;
+    background-color: #0096FF;
     position: fixed;
     top: 75px;
     left: 100px;
@@ -34,7 +34,6 @@ nav {
 
 nav img {
     width: 100%;
-    bottom: 100px;
 }
 
 ul {
@@ -50,12 +49,21 @@ li {
 
 li a {
     display: block;
-    color: #A52A2A;
+    color: black;
+    /*background-color: #0096FF; */
     padding: 10px 15px;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     border-bottom: 1px solid #ccc;
+}
+
+ul li:nth-child(odd) a {
+    background-color: #0096FF;
+}
+
+ul li:nth-child(even) a {
+    background-color: #FF5F15;
 }
 
 li a:hover {
@@ -75,14 +83,17 @@ li a.active {
 }
 
 .social-icons a {
-    color: #A52A2A;
-    padding: 10px;
+    color: white;
+    padding: 5px;
     font-size: 24px;
     text-decoration: none;
+    border: 2px solid black;
+    border-radius: 30%;
+    width: 30px;
 }
 
 .social-icons a:hover {
-    color: #555;
+    color: #FF5F15;
 }
 
 .content {
