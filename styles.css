@@ -155,6 +155,8 @@ li a.active {
     height: 75%;
     object-fit: cover;
     display: block;
+    border: 6px solid #FF5F15;
+    box-sizing: border-box;
 }
 
 .prev, .next {
@@ -178,7 +180,7 @@ li a.active {
 }
 
 .prev:hover, .next:hover {
-    background-color: #FF5F15;
+    background-color: #0096FF;
 }
 
 /*.text {
