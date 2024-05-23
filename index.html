@@ -21,13 +21,84 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <li><a href="order.html">Order Pickup</a></li>
-            <li><a href="questions.html">Q & A</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="questions.html">Contact Us</a></li>
         </ul>
         <div class="social-icons">
             <a href="https://www.facebook.com/GyroMediterranean" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
     </nav>
+
+    <div id="slideshow-title">
+        <p>Have a look at our delicious food!</p>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="slides">
+            <div class="numbertext">1 / 3</div>
+            <img src="/Users/phillwill/Desktop/Fam.jpeg" style="width: 100%;">
+            <div class="text"></div>
+        </div>
+
+        <div class="slides">
+            <div class="numbertext">2 / 3</div>
+            <img src="/Users/phillwill/Desktop/Dishes.jpeg" style="width: 100%;">
+            <div class="text"></div>
+        </div>
+
+        <div class="slides">
+            <div class="numbertext">3 / 3</div>
+            <img src="/Users/phillwill/Desktop/Puffs.jpeg" style="width: 100%;">
+            <div class="text"></div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Function to move to next slide
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        
+        // Function to set current slide
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+        
+        // Function to show the slides
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+
+    setInterval(function() {
+        plusSlides(1);
+    }, 5000);
+
+    </script>
 
 </body>
 </html>
