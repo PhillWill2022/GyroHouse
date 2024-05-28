@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="8tZhJjLc"></script>
+    <title>Menu</title>
+</head>
+<body>
+
+    <div id="top-bar">
+        <div id="top-info">
+            <p>616 S LEWIS ST STE. A &nbsp; |  | &nbsp; NEW IBERIA, LA 70560 &nbsp; | | &nbsp; &nbsp;337. 256. 5147</p>
+        </div>
+    </div>
+
+    <nav>
+        <img src="/Users/phillwill/Desktop/Gyro.jpeg" alt="Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="questions.html">Contact Us</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/GyroMediterranean" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </nav>
+
+    <div class="menu-container">
+        <div class="menu-category" onclick="toggleMenu('appetizers', this)">Appetizers</div>
+        <div class="menu-category" onclick="toggleMenu('entrees', this)">Entrees</div>
+        <div class="menu-category" onclick="toggleMenu('wraps', this)">Wraps</div>
+        <div class="menu-category" onclick="toggleMenu('soups&salads', this)">Soups & Salads</div>
+        <div class="menu-category" onclick="toggleMenu('kids&vegetarian', this)">Kids & Vegetarian</div>
+        <div class="menu-category" onclick="toggleMenu('sides', this)">Sides</div>
+    </div>
+
+    <div id="appetizers" class="menu-items">
+        <ul>
+            <li>Greek Fries</li>
+            <li>Spinach Pies</li>
+            <li>Fried Eggplant</li>
+            <li>Humus</li>
+            <li>BabaGhanoush</li>
+            <li>Grecian Dip (Tzatziki)</li>
+            <li>Grape Leaves Veggie</li>
+        </ul>
+    </div>
+
+    <div id="entrees" class="menu-items">
+        <ul>
+            <li>Lamb Chops</li>
+            <li>Combo Plate</li>
+            <li>Grilled Tilapia</li>
+            <li>Chicken Shawarma Plate</li>
+            <li>Gyro Plate</li>
+            <li>Chicken Shawarma or Gyro Pasta</li>
+            <li>Combo Pasta</li>
+            <li>Shrimp Pasta</li>
+        </ul>
+    </div>
+
+    <div id="wraps" class="menu-items">
+        <ul>
+            <li>Gyro Wrap</li>
+            <li>Spicy Gyro Wrap</li>
+            <li>Shrimp Wrap</li>
+            <li>Spicy Shrimp Wrap</li>
+            <li>Chicken Shawarma Wrap</li>
+            <li>Spicy Chicken Wrap</li>
+            <li>Combo Wrap</li>
+            <li>Spicy Combo Wrap</li>
+            <li>Falafel Wrap</li>
+            <li>Wraps Only</li>
+        </ul>
+    </div>
+
+    <div id="soups&salads" class="menu-items">
+        <ul>
+            <li>Chicken Shawarma or Gyro Salad</li>
+            <li>Fattoush Salad</li>
+            <li>Chicken Shawarma or Gyro Fattoush Salad</li>
+            <li>Combo Feta Salad</li>
+            <li>Shrimp Feta Salad</li>
+        </ul>
+    </div>
+
+    <div id="kids&vegetarian" class="menu-items">
+        <ul>
+            <li>Kids Gyro or Chicken Shawarma Plate</li>
+            <li>Vegetarian Plate</li>
+            <li>Falafel Plate</li>
+        </ul>
+    </div>
+
+    <div id="sides" class="menu-items">
+        <ul>
+            <li>1/2lb of Gyro or Chicken</li>
+            <li>1/2lb Combo Meat</li>
+            <li>1lb of Gyro or Chicken</li>
+            <li>1lb of Combo Meat</li>
+            <li>Combo Side of Gyro & Chicken</li>
+            <li>Fries</li>
+            <li>Side of Hummus or Grecian</li>
+            <li>Pita Bread</li>
+            <li>Extra Meat</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu(category, element) {
+            const menuItems = document.querySelectorAll('.menu-items');
+            menuItems.forEach(item => {
+                if (item.id === category) {
+                    item.style.display = item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Remove 'selected' class from all categories
+            const categories = document.querySelectorAll('.menu-category');
+            categories.forEach(cat => {
+                cat.classList.remove('selected');
+            });
+
+            // Add 'selected' class to the clicked category
+            element.classList.add('selected');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuItems = document.querySelectorAll('.menu-items');
+            menuItems.forEach(item => {
+                item.style.display = 'none';
+            });
+        })
+
+    </script>
+
+    
+</body>
+</html>
